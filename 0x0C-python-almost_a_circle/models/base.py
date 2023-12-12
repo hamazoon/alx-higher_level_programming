@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ module doc for base """
-import json
 
 
 class Base:
