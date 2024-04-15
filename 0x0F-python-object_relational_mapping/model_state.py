@@ -1,16 +1,20 @@
 #!/usr/bin/python3
-"""model state
-"""
-from sqlalchemy import Column, Integer, String, ForeignKey
+""" Class definition of a State """
+from sqlalchemy import Integer, String, Column
 from sqlalchemy.ext.declarative import declarative_base
+
 
 Base = declarative_base()
 
 
-class City(Base):
-    """ class class """
-    __tablename__ = 'cities'
+class State(Base):
+    """ State Class """
+    __tablename__ = 'states'
+    id = Column('id', Integer, primary_key=True)
+    name = Column('name', String(128), nullable=False)
 
-    id = Column(Integer, primary_key=True, nullable=False)
-    name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'))
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return f"{self.id}: {self.name}"
