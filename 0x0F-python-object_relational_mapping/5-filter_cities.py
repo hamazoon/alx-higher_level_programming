@@ -1,7 +1,6 @@
-
 #!/usr/bin/python3
-"""states models
-"""
+#states models
+
 if __name__ == "__main__":
     import MySQLdb
     import sys
